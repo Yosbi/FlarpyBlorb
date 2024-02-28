@@ -26,4 +26,8 @@ public class PipeMoveScript : MonoBehaviour
         }
             
     }
+
+    public void IncreaseSpeedBy(float deltaSpeed) {
+        moveSpeed += deltaSpeed;
+    }
 }

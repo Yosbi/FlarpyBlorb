@@ -8,7 +8,8 @@ public class BirdScript : MonoBehaviour
     public float flapStrength;
     public LogicScript logicScript;
     public bool birdIsAlive = true;
-
+    public float gameOverHeight = 10;
+    public AudioSource wingFlapSFX;
 
 
     // Start is called before the first frame update
@@ -20,14 +21,32 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Input.GetKeyDown(KeyCode.Space) && birdIsAlive ) {
+        if (!birdIsAlive)
+            return;
+
+        if ( Input.GetKeyDown(KeyCode.Space) ) {
             rigidBody2D.velocity = Vector2.up * flapStrength;
+            wingFlapSFX.Play();
+        }
+
+        if (transform.position.y > gameOverHeight || transform.position.y < -gameOverHeight)
+        {
+            KillBird();
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        KillBird();
+    }
+
+    void KillBird(){
         logicScript.gameOver();
         birdIsAlive = false;
+    }
+
+    public bool isBirdAlive()
+    {
+        return birdIsAlive;
     }
 }
