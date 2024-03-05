@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 4885303888688753174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04999999, y: -0.10000038, z: 0}
+  m_LocalPosition: {x: 3.3, y: -0.10000038, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -269,6 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374d2e430c4604fb5a3472766e7dc2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logicScript: {fileID: 0}
+  birdScript: {fileID: 0}
 --- !u!1 &5931759673931486906
 GameObject:
   m_ObjectHideFlags: 0
